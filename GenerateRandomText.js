@@ -6,10 +6,3 @@ function genere_tilfældig_citat(){
         .then(Response => Response.json())
         .then(data => data.content)
 }
-
-async function genere_næste_citat(){
-    const citat = await genere_tilfældig_citat()
-    console.log(citat)
-}
-
-genere_næste_citat()
