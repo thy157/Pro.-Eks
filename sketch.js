@@ -1,7 +1,7 @@
-function setup() {
+async function setup() {
   createCanvas(windowWidth,windowHeight);
 
-  let næste_citat = genere_tilfældig_citat()
+  let næste_citat = await genere_tilfældig_citat()
   console.log("citat: " + næste_citat)
 }
 
