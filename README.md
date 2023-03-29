@@ -1,2 +1,2 @@
 # Pro.-Eks
-Eksamen projekt af Micheal, Jacob og Azad
+Eksamen projekt af Micheal og Jacob 
