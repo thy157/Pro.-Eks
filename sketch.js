@@ -45,5 +45,5 @@ function draw() {
   stroke(0)
   fill('green');  
   textSize(42);
-  text(grønneBogstaver.join(''),kasseX+10, kasseY+10)
+  text(grønneBogstaver.join(''),kasseX+10, kasseY+10, kasseBredde, kasseHøjde)
 }
