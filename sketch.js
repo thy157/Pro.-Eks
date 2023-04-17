@@ -1,8 +1,5 @@
 async function setup() {
   createCanvas(windowWidth,windowHeight);
-
-  let næste_citat = await genere_tilfældig_citat()
-  console.log("citat: " + næste_citat)
 }
 
 let grønneBogstaver = [''];
@@ -37,7 +34,7 @@ function draw() {
   fill('yellow');  
   textSize(42);
   textAlign(LEFT)
-  text(tekst, kasseX+10, kasseY+10, kasseBredde, kasseHøjde)
+  text(citat, kasseX+10, kasseY+10, kasseBredde, kasseHøjde)
 
   if (rigtigTast == true) {
       grønneBogstaver[antalRigtige-1]= bogstav[antalRigtige-1]
