@@ -1,9 +1,7 @@
-async function setup() {
-  createCanvas(windowWidth,windowHeight);
-
-  let næste_citat = await genere_tilfældig_citat()
-  console.log("citat: " + næste_citat)
-}
+let VkasseBredde; 
+let VkasseHøjde;
+let VkasseX;
+let VkasseY;
 
 let grønneBogstaver = [''];
 
@@ -13,8 +11,17 @@ let kasseHjørneDiameter = 20
 let kasseX = 450
 let kasseY = 300
 
+async function setup() {
+  createCanvas(windowWidth,windowHeight);
+  VkasseBredde = windowWidth/5 
+  VkasseHøjde = windowHeight/1.3
+  VkasseX = windowWidth/20
+  VkasseY = windowHeight/10
+}
 
 function draw() {
+  
+
   background('black');
 
   //titel
@@ -23,9 +30,25 @@ function draw() {
   textSize(62);
   text("Type Type",windowWidth/2 ,windowHeight/5 );
 
+  //kasse til statestik
+  stroke('yellow');
+  strokeWeight(4);
+  fill(0);
+  rect(VkasseX, VkasseY, VkasseBredde, VkasseHøjde, kasseHjørneDiameter);
+  
+  //Antal Fejl
+  if (antalRigtige == bogstav.length) {
+  textWrap(WORD);
+  stroke(0)
+  fill('yellow');  
+  textSize(50);
+  textAlign(CENTER)
+  text('Fejl: '+ antalForkerte , VkasseX, VkasseY+20, VkasseBredde, VkasseHøjde)
+  }
+  
   
 
-  //kassen
+  //kassen til citatet
   stroke('yellow');
   strokeWeight(4);
   fill(0);
@@ -37,7 +60,7 @@ function draw() {
   fill('yellow');  
   textSize(42);
   textAlign(LEFT)
-  text(tekst, kasseX+10, kasseY+10, kasseBredde, kasseHøjde)
+  text(citat, kasseX+10, kasseY+10, kasseBredde, kasseHøjde)
 
   if (rigtigTast == true) {
       grønneBogstaver[antalRigtige-1]= bogstav[antalRigtige-1]

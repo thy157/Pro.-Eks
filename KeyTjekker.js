@@ -1,9 +1,17 @@
 let rigtigTast = false
 let antalRigtige = 0
+let antalForkerte = 0
+let bogstav = ''
+let citat = ''
 
-let tekst = 'Hej med dig Micheal, det er ligegyldig, det skal være tekst med mellemrum'
-let bogstav = tekst.split('');
-console.log(bogstav);
+async function næste_citat(){
+citat = await genere_tilfældig_citat();
+console.log('citat: ' + citat)
+bogstav = citat.split('')
+}
+
+næste_citat()
+
 
 function keyTyped(){
     if(key === bogstav[antalRigtige]){
@@ -14,6 +22,7 @@ function keyTyped(){
     else{
         console.log('forkert')
         rigtigTast = false
+        antalForkerte++
     }
 }
 
