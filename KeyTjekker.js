@@ -1,5 +1,6 @@
 let rigtigTast = false
 let antalRigtige = 0
+let antalForkerte = 0
 let bogstav = ''
 let citat = ''
 
@@ -21,6 +22,7 @@ function keyTyped(){
     else{
         console.log('forkert')
         rigtigTast = false
+        antalForkerte++
     }
 }
 
