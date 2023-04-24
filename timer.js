@@ -2,8 +2,11 @@ let timer;
 let sec = 0;
 
 function Timer(){
-timer = setInterval(function(){ sec ++ }, 10000)
-if (antalRigtige == bogstav){
+timer = setInterval(function(){ sec ++ }, 1000)
+}
+
+function StopTimer(){
     clearInterval(timer)
 }
-}
+
+

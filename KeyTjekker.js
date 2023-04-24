@@ -4,6 +4,7 @@ let antalForkerte = 0
 let bogstav = ''
 let citat = ''
 
+
 async function næste_citat(){
 citat = await genere_tilfældig_citat();
 console.log('citat: ' + citat)
@@ -24,5 +25,8 @@ function keyTyped(){
         rigtigTast = false
         antalForkerte++
     }
+   if (key === bogstav[0]){
+    Timer()
+    console.log('timer')
+   }
 }
-
