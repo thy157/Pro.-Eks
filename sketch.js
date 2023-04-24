@@ -49,7 +49,7 @@ function draw() {
   textAlign(CENTER, TOP);
   fill('yellow');
   textSize(62);
-  text("Type Type", windowWidth / 2, windowHeight / 5);
+  text("Skrivemaskinen", windowWidth / 2, windowHeight / 5);
 
   //Vkasse til statestik
   stroke('yellow');
@@ -88,7 +88,7 @@ function draw() {
     fill('yellow');
     textSize(50);
     textAlign(CENTER)
-    text('CPM: ' + CPMround, HkasseX + 10, HkasseY + 200, HkasseBredde, HkasseHøjde)
+    text('CPM: \n' + CPMround, HkasseX + 10, HkasseY + 200, HkasseBredde, HkasseHøjde)
     ACC = 100 - (antalForkerte / bogstav.length * 100);
     ACCround = ACC.toFixed(2);
 

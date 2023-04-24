@@ -5,28 +5,28 @@ let bogstav = ''
 let citat = ''
 
 
-async function næste_citat(){
-citat = await genere_tilfældig_citat();
-console.log('citat: ' + citat)
-bogstav = citat.split('')
+async function næste_citat() {
+    citat = await genere_tilfældig_citat();
+    console.log('citat: ' + citat)
+    bogstav = citat.split('')
 }
 
 næste_citat()
 
 
-function keyTyped(){
-    if(key === bogstav[antalRigtige]){
+function keyTyped() {
+    if (key === bogstav[antalRigtige]) {
         console.log('rigtigt')
         rigtigTast = true
         antalRigtige++
     }
-    else{
+    else {
         console.log('forkert')
         rigtigTast = false
         antalForkerte++
     }
-   if (key === bogstav[0]){
-    Timer()
-    console.log('timer')
-   }
+    if (key === bogstav[0]) {
+        Timer()
+        console.log('timer')
+    }
 }

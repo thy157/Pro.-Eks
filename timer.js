@@ -1,11 +1,11 @@
-let timer; 
+let timer;
 let sec = 0;
 
-function Timer(){
-timer = setInterval(function(){ sec ++ }, 1000)
+function Timer() {
+    timer = setInterval(function () { sec++ }, 1000)
 }
 
-function StopTimer(){
+function StopTimer() {
     clearInterval(timer)
 }
 
