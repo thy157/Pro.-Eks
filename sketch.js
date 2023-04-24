@@ -65,7 +65,15 @@ function draw() {
   //WPM
 
   //Timer
-  
+  Timer()
+  textWrap(WORD);
+  stroke(0)
+  fill('yellow');  
+  textSize(42);
+  textAlign(LEFT)
+  text(sec, HkasseX+10, HkasseY+10, HkasseBredde, HkasseHøjde)
+
+
   //Antal Fejl
   if (antalRigtige == bogstav.length) {
   textWrap(WORD);
@@ -78,7 +86,7 @@ function draw() {
 
   //Præsition
   if (antalRigtige == bogstav.length) {
-    ACC = (antalForkerte/bogstav.length)*100;
+    ACC = 100-(antalForkerte/bogstav.length*100);
     ACCround = ACC.toFixed(2);
 
     textWrap(WORD);
