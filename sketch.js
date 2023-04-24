@@ -3,13 +3,21 @@ let VkasseHøjde;
 let VkasseX;
 let VkasseY;
 
-let grønneBogstaver = [''];
+let HkasseBredde; 
+let HkasseHøjde;
+let HkasseX;
+let HkasseY;
 
-let kasseBredde = 600 
-let kasseHøjde = 300
-let kasseHjørneDiameter = 20
-let kasseX = 450
-let kasseY = 300
+let grønneBogstaver = [''];
+let ACC;
+let ACCround;
+
+let kasseBredde;
+let kasseHøjde;
+let kasseHjørneDiameter = 22
+let kasseX;
+let kasseY;
+
 
 async function setup() {
   createCanvas(windowWidth,windowHeight);
@@ -17,6 +25,18 @@ async function setup() {
   VkasseHøjde = windowHeight/1.3
   VkasseX = windowWidth/20
   VkasseY = windowHeight/10
+
+  kasseBredde = windowWidth/2.5 
+  kasseHøjde = windowHeight/2
+  kasseHjørneDiameter = 20
+  kasseX = windowWidth/3.3 
+  kasseY = windowHeight/3
+
+  HkasseBredde = windowWidth/5  
+  HkasseHøjde = windowHeight/1.3
+  HkasseX = windowWidth/1.3
+  HkasseY=  windowHeight/10
+
 }
 
 function draw() {
@@ -30,11 +50,21 @@ function draw() {
   textSize(62);
   text("Type Type",windowWidth/2 ,windowHeight/5 );
 
-  //kasse til statestik
+  //Vkasse til statestik
   stroke('yellow');
   strokeWeight(4);
   fill(0);
   rect(VkasseX, VkasseY, VkasseBredde, VkasseHøjde, kasseHjørneDiameter);
+
+  //Hkasse til statestik
+  stroke('yellow');
+  strokeWeight(4);
+  fill(0);
+  rect(HkasseX, HkasseY, HkasseBredde, HkasseHøjde, kasseHjørneDiameter);
+  
+  //WPM
+
+  //Timer
   
   //Antal Fejl
   if (antalRigtige == bogstav.length) {
@@ -45,8 +75,19 @@ function draw() {
   textAlign(CENTER)
   text('Fejl: '+ antalForkerte , VkasseX, VkasseY+20, VkasseBredde, VkasseHøjde)
   }
-  
-  
+
+  //Præsition
+  if (antalRigtige == bogstav.length) {
+    ACC = (antalForkerte/bogstav.length)*100;
+    ACCround = ACC.toFixed(2);
+
+    textWrap(WORD);
+    stroke(0)
+    fill('yellow');  
+    textSize(50);
+    textAlign(CENTER)
+    text('ACC: '+ ACCround +'%' , VkasseX, VkasseY+200, VkasseBredde, VkasseHøjde)
+    }
 
   //kassen til citatet
   stroke('yellow');
