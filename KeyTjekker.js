@@ -27,6 +27,5 @@ function keyTyped() {
     }
     if (key === bogstav[0]) {
         Timer()
-        console.log('timer')
     }
 }
