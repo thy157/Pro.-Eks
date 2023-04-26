@@ -89,10 +89,12 @@ function draw() {
     textSize(50);
     textAlign(CENTER)
     text('CPM: \n' + CPMround, HkasseX + 10, HkasseY + 200, HkasseBredde, HkasseHøjde)
+    
+  
+    //ACC
     ACC = 100 - (antalForkerte / bogstav.length * 100);
     ACCround = ACC.toFixed(2);
 
-    //ACC
     stroke(0)
     fill('yellow');
     textSize(50);
